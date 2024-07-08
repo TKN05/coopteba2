@@ -1,0 +1,125 @@
+/* Global Styles */
+body {
+    margin: 60px;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #1d1c1c;
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav ul {
+    width: 200px; /* Ancho del menú vertical */
+  background-color: #333; /* Color de fondo del menú */
+  padding: 20px;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+  color: #fff; /* Color del texto */
+  }
+  
+  nav ul {
+    list-style-type: none; /* Quita los puntos de la lista */
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Estilo para cada ítem de la lista */
+  nav li {
+    margin-bottom: 10px; /* Espacio entre elementos de la lista */
+  }
+  
+  /* Estilo para el enlace dentro de cada ítem de la lista */
+  nav a {
+    text-decoration: none;
+    color: #fff; /* Color del texto */
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Cambio de color al pasar el mouse sobre el enlace */
+  nav a:hover {
+    background-color: #555;
+  }
+  /* Main Content Styles */
+  main {
+    padding: 40px;
+  }
+  
+  section {
+    margin-bottom: 40px;
+  }
+  
+  h1, h2, h3 {
+    color:#fff;
+  }
+  
+  /* Footer Styles */
+  footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    
+  }
+  
+  /* Specific Page Styles */
+  .home-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .home-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .home-content button {
+    background-color: #c00;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .services-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .services-list li {
+    flex-basis: 48%;
+    margin-bottom: 20px;
+  }
+  
+  .contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .contact-form label,
+  .contact-form input,
+  .contact-form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .contact-form button {
+    background-color: #c00;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
