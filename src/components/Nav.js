@@ -51,7 +51,7 @@ const Menu = () => {
         </Link>
       </div>
       <div className="menu-item">
-        <Link to="/socios" className="menu-link">
+        <Link to="/SociosPage" className="menu-link">
           <div className="icon"><img src={Group} alt="Socios" /></div>
           <div className="menu-text">Socios</div>
         </Link>
