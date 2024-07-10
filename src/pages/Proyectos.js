@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../App.css'; // Asegúrate de tener tu archivo CSS para estilos
 import Nav from '../components/Nav'; // Importamos el componente Nav
+import CardComponent from '../components/CardComponent';
 
 const proyectosEjemplo = [
   {
@@ -16,6 +17,13 @@ const proyectosEjemplo = [
     estado: 'Completado',
     imagen: 'https://via.placeholder.com/150',
     direccion: 'https://ejemplo.com/proyecto2'
+  },
+  {
+    id: 3,
+    nombre: 'Proyecto 3',
+    estado: 'En progreso',
+    imagen: 'https://via.placeholder.com/150',
+    direccion: 'https://ejemplo.com/proyecto3'
   },
   // Agrega más proyectos según sea necesario
 ];
@@ -72,15 +80,22 @@ const App = () => {
          
           <div className="proyectos-container">
             {proyectosFiltrados.map(proyecto => (
-              <div key={proyecto.id} className="proyecto-box">
+              /*<div key={proyecto.id} className="proyecto-box">
                 <div className="proyecto">
                   <img src={proyecto.imagen} alt={proyecto.nombre} />
                   <h3>{proyecto.nombre}</h3>
                   <p>{proyecto.estado}</p>
                 </div>
-              </div>
+              </div>*/
+              <CardComponent 
+              title={proyecto.nombre} 
+              description={proyecto.estado}
+              imageUrl={proyecto.imagen}
+              direccion={proyecto.direccion}>
+              </CardComponent>
             ))}
           </div>
+          
         </section>
       </main>
     </div>
