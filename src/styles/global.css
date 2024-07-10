@@ -1,9 +1,19 @@
+* {
+  padding: 0;
+  margin: 0;
+  
+}
+
 /* Global Styles */
 body {
-    margin: 60px;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    color: #1d1c1c;
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #1d1c1c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   }
   
   /* Header Styles */
@@ -49,13 +59,7 @@ body {
     background-color: #555;
   }
   /* Main Content Styles */
-  main {
-    padding: 40px;
-  }
   
-  section {
-    margin-bottom: 40px;
-  }
   
   h1, h2, h3 {
     color:#fff;
@@ -96,7 +100,12 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
   }
-  
+  .main-content{
+    margin-left: 50px;
+    padding: 20px;
+    width: auto;
+    background: none;
+  }
   .services-list li {
     flex-basis: 48%;
     margin-bottom: 20px;
