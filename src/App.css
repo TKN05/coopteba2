@@ -36,6 +36,9 @@
 .card-content {
   text-align: center;
 }
+.card image{
+  background: #007bff;
+}
 
 .card-content h3 {
   margin-top: 10px;

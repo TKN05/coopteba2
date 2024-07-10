@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../App.css'; // Asegúrate de tener tu archivo CSS para estilos
 import Nav from '../components/Nav'; // Importamos el componente Nav
 import CardComponent from '../components/CardComponent';
+import plus from '../assets/svg/SVGPRO/plus.svg';
 
 const proyectosEjemplo = [
   {
@@ -76,9 +77,15 @@ const App = () => {
         </section>
 
         {/* Sección de Proyectos */}
+
         <section id="proyectos" className="proyectos-section">
+        
          
           <div className="proyectos-container">
+            <div className='card'>
+            <img src={plus} alt="Administración" />
+              <h2>Agregar Proyecto</h2>
+            </div>
             {proyectosFiltrados.map(proyecto => (
               /*<div key={proyecto.id} className="proyecto-box">
                 <div className="proyecto">
