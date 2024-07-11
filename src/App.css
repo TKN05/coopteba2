@@ -80,6 +80,7 @@ select {
 /* Estilos para la disposición de las cajas (boxes) sub menus de proyectos */
 
 .box-container {
+
   display: flex;
   flex-direction: column-reverse;
   flex-wrap: wrap;
@@ -88,7 +89,10 @@ select {
   height: 50vh;
   width: 50vh; /* Ancho suficiente para 4 cajas de 100px + 3 espacios de gap */
   margin-left: 50px;
-  
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: baseline;
+
 }
 
 .box {
@@ -102,6 +106,7 @@ select {
   cursor: pointer;
   transition: background-color 0.3s;
   margin-bottom: 20px; /* Espacio inferior para separar las filas */
+  border-radius: 20px;
 }
 
 .box:hover {
