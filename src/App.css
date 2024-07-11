@@ -153,3 +153,68 @@ select {
   border-color: #009efa;
   margin-bottom: 20px;
 } */
+
+/* src/App.css */
+
+/* Estilos generales de la aplicación */
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* src/App.css */
+
+/* Estilos generales de la aplicación */
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos para la disposición de las cajas (boxes) */
+
+.boxes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Espacio entre las cajas */
+  padding: 20px;
+  width: 100%; /* Ancho suficiente para 4 cajas de 100px + 3 espacios de gap */
+  margin: auto; /* Centra el contenedor */
+}
+
+.box {
+  width: 250px; /* Ancho de la caja */
+  height: 100px; /* Alto de la caja */
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #009efa;
+  border: 1px solid #009efa;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 20px; /* Espacio inferior para separar las filas */
+}
+
+.box:hover {
+  background-color: #0075fa;
+}
