@@ -180,7 +180,7 @@ const Proyectos = () => {
   });
 
   return (
-    <div className="container">
+    <main className="container">
       {/* Componente Nav */}
       <header>
         <Nav />
@@ -269,7 +269,7 @@ const Proyectos = () => {
           </div>
         </section>
       </main>
-    </div>
+    </main>
   );
 }
 

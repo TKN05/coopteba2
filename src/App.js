@@ -15,9 +15,8 @@ import './App.css'; // Asegúrate de tener tu archivo CSS para estilos
 function App() {
   return (
     <Router>
-      <div className="app-container">
         {/* Contenido principal */}
-        <main className="main-content">
+        <body className="main-content">
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/proyectos" element={<Proyectos />} />
@@ -29,8 +28,7 @@ function App() {
             <Route path="/proyectos" element={<Page5 />} />
             <Route path="/proyectos" element={<Page6 />} />
           </Routes>
-        </main>
-        </div>
+        </body>
     </Router>
   );
 }
