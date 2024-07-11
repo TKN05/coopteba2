@@ -16,6 +16,7 @@ function App() {
   return (
     <Router>
       <div className="app-container">
+        {/* Contenido principal */}
         <main className="main-content">
           <Routes>
             <Route exact path="/" element={<Home />} />
@@ -29,7 +30,7 @@ function App() {
             <Route path="/proyectos" element={<Page6 />} />
           </Routes>
         </main>
-      </div>
+        </div>
     </Router>
   );
 }

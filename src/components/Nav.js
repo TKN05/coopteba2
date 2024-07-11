@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Importar Link desde react-router-dom
+// src/components/Nav.js
+import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/Menu.css';
 import Home from '../assets/svg/SVGPRO/home.svg';
 import Books from '../assets/svg/SVGPRO/books.svg';
@@ -8,8 +9,8 @@ import Graph from '../assets/svg/SVGPRO/graph.svg';
 import Group from '../assets/svg/SVGPRO/group.svg';
 import User from '../assets/svg/SVGPRO/user.svg';
 
-const Menu = () => {
-  const [expanded, setExpanded] = useState(false);
+const Nav = () => {
+  const [expanded, setExpanded] = React.useState(false);
 
   const handleMouseEnter = () => {
     setExpanded(true);
@@ -20,12 +21,11 @@ const Menu = () => {
   };
 
   return (
-    <div
+    <nav 
       className={`menu-container ${expanded ? 'expanded' : ''}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Usar Link en lugar de div para los elementos de menú */}
       <div className="menu-item">
         <Link to="/" className="menu-link">
           <div className="icon"><img src={Home} alt="Home" /></div>
@@ -62,8 +62,8 @@ const Menu = () => {
           <div className="menu-text">Perfiles</div>
         </Link>
       </div>
-    </div>
+    </nav>
   );
 };
 
-export default Menu;
+export default Nav;

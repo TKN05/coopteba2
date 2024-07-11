@@ -10,125 +10,22 @@ body {
   width: 100vw;
   padding: 0;
   font-family: Arial, sans-serif;
-  color: #1d1c1c;
   display: flex;
   justify-content: center;
   align-items: center;
   }
-  
-  /* Header Styles */
-  header {
-    background-color: #000;
-    color: #fff;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  nav ul {
-    width: 200px; /* Ancho del menú vertical */
-  background-color: #333; /* Color de fondo del menú */
-  padding: 20px;
-  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); /* Sombra */
-  color: #fff; /* Color del texto */
-  }
-  
-  nav ul {
-    list-style-type: none; /* Quita los puntos de la lista */
-    padding: 0;
-    margin: 0;
-  }
-  
-  /* Estilo para cada ítem de la lista */
-  nav li {
-    margin-bottom: 10px; /* Espacio entre elementos de la lista */
-  }
-  
-  /* Estilo para el enlace dentro de cada ítem de la lista */
-  nav a {
-    text-decoration: none;
-    color: #fff; /* Color del texto */
-    display: block;
-    padding: 10px;
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Cambio de color al pasar el mouse sobre el enlace */
-  nav a:hover {
-    background-color: #555;
-  }
-  /* Main Content Styles */
-  
+
   
   h1, h2, h3 {
-    color:#fff;
+    color:#d3c0c0;
   }
-  
-  /* Footer Styles */
-  footer {
-    background-color: #000;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    
-  }
-  
+
   /* Specific Page Styles */
-  .home-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
   
-  .home-content h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  
-  .home-content button {
-    background-color: #c00;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .services-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
   .main-content{
     margin-left: 50px;
-    padding: 20px;
-    width: auto;
+    width: 90vw;
+    height: 90vh;
     background: none;
   }
-  .services-list li {
-    flex-basis: 48%;
-    margin-bottom: 20px;
-  }
   
-  .contact-form {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  
-  .contact-form label,
-  .contact-form input,
-  .contact-form textarea {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  
-  .contact-form button {
-    background-color: #c00;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
