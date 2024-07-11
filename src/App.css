@@ -60,4 +60,47 @@ select {
   border-radius: 10px;
 }
 
-/* SociosPage.css */
+/* src/App.css */
+
+/* Estilos generales de la aplicación */
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  display: flex;
+}
+
+/* Estilos para la disposición de las cajas (boxes) sub menus de proyectos */
+
+.box-container {
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 30px;
+  height: 50vh;
+  width: 50vh; /* Ancho suficiente para 4 cajas de 100px + 3 espacios de gap */
+  margin-left: 50px;
+  
+}
+
+.box {
+  width: 220px; /* Ancho de la caja */
+  height: 100px; /* Alto de la caja */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #007bff;;
+  border: 1px solid #007bff;;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 20px; /* Espacio inferior para separar las filas */
+}
+
+.box:hover {
+  background-color: #e0e0e0;
+}

@@ -27,8 +27,9 @@ function Home() {
   
   return (
     
-    <div className="boxes-container">
+    <main className="container">
       <div> <Nav /></div>
+      <div className="box-container">
       <div className="box" onClick={() => handleRedirect('/contratos')}>
         <Icon icon={contratosIcon} /> Contratos
       </div>
@@ -53,7 +54,8 @@ function Home() {
       <div className="box" onClick={() => handleRedirect('/socios')}>
         <Icon icon={sociosIcon} /> Socios
       </div>
-    </div>
+      </div>
+    </main>
   );
 }
 
