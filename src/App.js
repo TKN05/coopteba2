@@ -1,7 +1,7 @@
 // src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
+import Home from './pages/Menuproyectos';
 import Proyectos from './pages/Proyectos';
 import SociosPage from './pages/SociosPage';
  import Page1 from './pages/Proyectos';
