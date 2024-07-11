@@ -1,6 +1,6 @@
 // src/pages/Proyectos.js
 import React, { useState } from 'react';
-import '../styles/card.css'; // Asegúrate de tener tu archivo CSS para estilos
+import '../App.css'; // Asegúrate de tener tu archivo CSS para estilos
 import Nav from '../components/Nav'; // Importamos el componente Nav
 import CardComponent from '../components/CardComponent';
 import plus from '../assets/svg/SVGPRO/plus.svg';
@@ -186,7 +186,7 @@ const Proyectos = () => {
         <Nav />
       </header>
       
-      <main className="main-content">
+      <main className="contenedor-proyectos">
         {/* Sección de Búsqueda */}
         <section className="busqueda-section">
           <input type="text" value={busqueda} onChange={handleChangeBusqueda} placeholder="Buscar proyectos..." />

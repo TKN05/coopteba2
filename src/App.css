@@ -1,9 +1,12 @@
-@import url(../src/styles/card.css);
+@import url(../src/styles/Proyectos.css);
 @import url(../src/styles/global.css);
 @import url(../src/styles/Menu.css);
 @import url(../src/styles/Tabla-socios.css);
 
-
+#root{
+  height: 100vh;
+  width: 100vw;
+}
 /* Estilos para el contenedor principal */
 .container {
   display: flex;
