@@ -4,19 +4,19 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Menuproyectos';
 import Proyectos from './pages/Proyectos';
 import SociosPage from './pages/SociosPage';
- import Page1 from './pages/Proyectos';
- import Page2 from './pages/Proyectos';
- import Page3 from './pages/Proyectos';
- import Page4 from './pages/Proyectos';
- import Page5 from './pages/Proyectos';
- import Page6 from './pages/Proyectos';
+import Page1 from './pages/Proyectos';
+import Page2 from './pages/Proyectos';
+import Page3 from './pages/Proyectos';
+import Page4 from './pages/Proyectos';
+import Page5 from './pages/Proyectos';
+import Page6 from './pages/Proyectos';
 import './App.css'; // Asegúrate de tener tu archivo CSS para estilos
 
 function App() {
   return (
     <Router>
         {/* Contenido principal */}
-        <body className="main-content">
+        <div className="main-content">
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/proyectos" element={<Proyectos />} />
@@ -28,9 +28,10 @@ function App() {
             <Route path="/proyectos" element={<Page5 />} />
             <Route path="/proyectos" element={<Page6 />} />
           </Routes>
-        </body>
+        </div>
     </Router>
   );
 }
+
 
 export default App;

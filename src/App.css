@@ -95,7 +95,21 @@ select {
 
 }
 
+.box-menu-container{
+  flex-wrap: wrap;
+  height: 50vh;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: baseline;
+
+  display: grid;
+  grid-template-columns: repeat(4, 2fr); /* Cuatro columnas de igual tamaño */
+  gap: 5%; /* Espacio entre las celdas */
+}
+
 .box {
+  text-align: center;
+  color: aliceblue;
   width: 220px; /* Ancho de la caja */
   height: 100px; /* Alto de la caja */
   display: flex;
@@ -111,4 +125,11 @@ select {
 
 .box:hover {
   background-color: #e0e0e0;
+  color: black;
+}
+
+
+
+.icon{
+  padding-right: 2px;
 }

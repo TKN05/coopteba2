@@ -29,7 +29,7 @@ const TablaSocios = ({ socios, onModificar, onEliminar }) => {
             <th>DNI</th>
             <th>Número de Teléfono</th>
             <th>Número de Miembros del Grupo Familiar</th>
-           
+          
           </tr>
         </thead>
         <tbody>
