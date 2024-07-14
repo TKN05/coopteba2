@@ -10,6 +10,7 @@
 /* Estilos para el contenedor principal */
 .container {
   display: flex;
+  flex-direction: column;
   height: 100vh;
   width: 100vw;
   align-items: center;
@@ -132,4 +133,19 @@ select {
 
 .icon{
   padding-right: 2px;
+}
+
+.map-container {
+  width: 80%;
+  height: 40%; /* Ajusta la altura según sea necesario */
+  overflow: hidden;
+  margin-bottom: 20px; /* Espacio entre el mapa y los botones */
+}
+
+.leaflet-map {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px; /* Añade el borde redondeado */
 }
