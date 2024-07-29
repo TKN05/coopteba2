@@ -1,11 +1,12 @@
 /* Estilos para el contenedor principal */
 .container {
-    display: flex;
-    height: 100vh;
-    background-color: #f5f5f5;
+  display: flex;
+  height: 100vh;
+  background-color: #f5f5f5;
 
-  }
-.contenedor-proyectos{
+}
+
+.contenedor-proyectos {
   margin-right: 35px;
   padding-top: 50px;
   height: 100vh;
@@ -14,205 +15,239 @@
   flex-direction: column;
   justify-content: center;
 }
+
 /* Estilos para la sección de filtro */
 .filtro-section {
-  margin-bottom: 40px; /* Alinea con el margen de la sección de búsqueda */
+  margin-bottom: 40px;
+  /* Alinea con el margen de la sección de búsqueda */
 }
 
 .filtro-section select {
-  width: 40vw; /* Ajusta el ancho */
-  padding: 10px 15px; /* Añade espacio interno */
-  font-size: 16px; /* Tamaño de fuente */
-  border: 1px solid #3498DB; /* Borde azul */
-  border-radius: 20px; /* Bordes redondeados */
-  background-color: white; /* Fondo blanco */
- 
+  width: 40vw;
+  /* Ajusta el ancho */
+  padding: 10px 15px;
+  /* Añade espacio interno */
+  font-size: 16px;
+  /* Tamaño de fuente */
+  border: 1px solid #3498DB;
+  /* Borde azul */
+  border-radius: 20px;
+  /* Bordes redondeados */
+  background-color: white;
+  /* Fondo blanco */
+
 }
 
 /* Sombra y color del borde al enfocar */
 .filtro-section select:focus {
-  outline: none; /* Elimina el borde de enfoque predeterminado */
-  border-color: #007bff; /* Color del borde al enfocar */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra */
+  outline: none;
+  /* Elimina el borde de enfoque predeterminado */
+  border-color: #007bff;
+  /* Color del borde al enfocar */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  /* Sombra */
 
 }
 
 /* Estilos para los ítems dentro del select */
 .filtro-section select option {
-  background-color: white; /* Fondo blanco para los ítems */
-  color: #000; /* Color del texto */
-  padding: 10px; /* Añade espacio interno */
+  background-color: white;
+  /* Fondo blanco para los ítems */
+  color: #000;
+  /* Color del texto */
+  padding: 10px;
+  /* Añade espacio interno */
 
 }
 
 
 .filtro-section select:focus option {
-  background-color: white; /* Fondo blanco para la caja desplegable */
-  color: #000000; /* Color del texto */
+  background-color: white;
+  /* Fondo blanco para la caja desplegable */
+  color: #000000;
+  /* Color del texto */
 
 }
 
-.busqueda-section{
+.busqueda-section {
   height: 20px;
   width: 70vw;
 
 }
-  /* Estilos para la sección de proyectos */
-  .proyectos-section {
-    overflow-y: scroll;
-    margin-bottom: 50px;
-    width: 94vw;
-  }
-  /* Estilos barra de desplazamiento */
 
-  .proyectos-section {
-    overflow-y: scroll;
-    margin-bottom: 50px;
-    width: 94vw;
-  }
-  
-  /* Estilos para la barra de scroll */
-  .proyectos-section {
-    overflow-y: scroll;
-    margin-bottom: 50px;
-    width: 94vw;
-  }
-  
-  /* Personalización de la barra de desplazamiento para Webkit (Chrome, Safari) */
-  .proyectos-section::-webkit-scrollbar {
-    width: 20px; /* Ancho de la barra de desplazamiento */
-  }
-  
-  /* Fondo de la barra de desplazamiento */
-  .proyectos-section::-webkit-scrollbar-track {
-    background: white; /* Fondo blanco */
-    border-radius: 12px;
-  }
-  
-  /* Color de la barra de desplazamiento */
-  .proyectos-section::-webkit-scrollbar-thumb {
-    background-color: #3498DB; /* Color celeste */
-    border-radius: 10px; /* Bordes redondeados */
-    border: 3px solid white; /* Espacio alrededor de la barra de desplazamiento */
-  }
-  
-  /* Elimina los botones de desplazamiento */
-  .proyectos-section::-webkit-scrollbar-button {
-    display: none; /* Oculta los botones */
-  }
+/* Estilos para la sección de proyectos */
+.proyectos-section {
+  overflow-y: scroll;
+  margin-bottom: 50px;
+  width: 94vw;
+}
+
+/* Estilos barra de desplazamiento */
+
+.proyectos-section {
+  overflow-y: scroll;
+  margin-bottom: 50px;
+  width: 94vw;
+}
+
+/* Estilos para la barra de scroll */
+.proyectos-section {
+  overflow-y: scroll;
+  margin-bottom: 50px;
+  width: 94vw;
+}
+
+/* Personalización de la barra de desplazamiento para Webkit (Chrome, Safari) */
+.proyectos-section::-webkit-scrollbar {
+  width: 20px;
+  /* Ancho de la barra de desplazamiento */
+}
+
+/* Fondo de la barra de desplazamiento */
+.proyectos-section::-webkit-scrollbar-track {
+  background: white;
+  /* Fondo blanco */
+  border-radius: 12px;
+}
+
+/* Color de la barra de desplazamiento */
+.proyectos-section::-webkit-scrollbar-thumb {
+  background-color: #3498DB;
+  /* Color celeste */
+  border-radius: 10px;
+  /* Bordes redondeados */
+  border: 3px solid white;
+  /* Espacio alrededor de la barra de desplazamiento */
+}
+
+/* Elimina los botones de desplazamiento */
+.proyectos-section::-webkit-scrollbar-button {
+  display: none;
+  /* Oculta los botones */
+}
+
+.proyectos-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
+  /* Ajusta este valor para el espacio entre los elementos */
+  padding: 1rem;
+  /* Añade un poco de padding alrededor del grid */
+  box-sizing: border-box;
+  /* Asegura que el padding se incluya en el tamaño total del elemento */
+}
+
+.card {
+  width: 150px;
+  padding: 10px;
+  background-color: #3498DB;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  max-width: 150px;
+  /* Tamaño máximo de la imagen */
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  /* Fondo semi-transparente */
+  z-index: 1000;
+}
+
+.proyecto-form {
+  margin-top: 20px;
+  width: 300px;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.proyecto-form div {
+  margin-bottom: 10px;
+}
+
+.proyecto-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.proyecto-form input,
+.proyecto-form select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.proyecto-form button {
+  background-color: #3498DB;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.proyecto-form button:hover {
+  background-color: #2980B9;
+}
+
+.confirmation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 123, 255, 0.8);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+
+/* Responsive Proyectos */
+
+@media (max-width: 1200px) {
   .proyectos-container {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 1rem; /* Ajusta este valor para el espacio entre los elementos */
-    padding: 1rem; /* Añade un poco de padding alrededor del grid */
-    box-sizing: border-box; /* Asegura que el padding se incluya en el tamaño total del elemento */
+    grid-template-columns: repeat(5, 1fr);
+    /* Reduce a 5 columnas en pantallas medianas */
   }
-  .card {
-    width: 150px;
-    padding: 10px;
-    background-color: #3498DB;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  
-  .card img {
-    width: 100%;
-    max-width: 150px; /* Tamaño máximo de la imagen */
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
+}
 
-  .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
-    z-index: 1000;
+@media (max-width: 992px) {
+  .proyectos-container {
+    grid-template-columns: repeat(3, 1fr);
+    /* Reduce a 3 columnas en pantallas más pequeñas */
   }
-  
-  .proyecto-form {
-    margin-top: 20px;
-    width: 300px;
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-  }
-  
-  .proyecto-form div {
-    margin-bottom: 10px;
-  }
-  
-  .proyecto-form label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .proyecto-form input,
-  .proyecto-form select {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .proyecto-form button {
-    background-color: #3498DB;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .proyecto-form button:hover {
-    background-color: #2980B9;
-  }
-  
-  .confirmation {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 123, 255, 0.8);
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    z-index: 1000;
-  }
-  
+}
 
-  /* Responsive Proyectos */
-  
-  @media (max-width: 1200px) {
-    .proyectos-container {
-      grid-template-columns: repeat(5, 1fr); /* Reduce a 5 columnas en pantallas medianas */
-    }
+@media (max-width: 768px) {
+  .proyectos-container {
+    grid-template-columns: repeat(2, 1fr);
+    /* Reduce a 2 columnas en pantallas pequeñas */
   }
-  
-  @media (max-width: 992px) {
-    .proyectos-container {
-      grid-template-columns: repeat(3, 1fr); /* Reduce a 3 columnas en pantallas más pequeñas */
-    }
+}
+
+@media (max-width: 576px) {
+  .proyectos-container {
+    grid-template-columns: 1fr;
+    /* Una columna en pantallas muy pequeñas */
   }
-  
-  @media (max-width: 768px) {
-    .proyectos-container {
-      grid-template-columns: repeat(2, 1fr); /* Reduce a 2 columnas en pantallas pequeñas */
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .proyectos-container {
-      grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
-    }
-  }
-  
+}
