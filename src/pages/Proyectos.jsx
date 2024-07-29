@@ -70,60 +70,95 @@ const proyectosEjemplo = [
     direccion: 'https://ejemplo.com/proyecto9'
   },
   {
-    id: 10,
-    nombre: 'Proyecto 10',
-    estado: 'En progreso',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto10'
-  },
-  {
-    id: 11,
-    nombre: 'Proyecto 11',
-    estado: 'Sin edificar',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto11'
-  },
-  {
-    id: 12,
-    nombre: 'Proyecto 12',
-    estado: 'Terminado',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto12'
-  },
-  {
-    id: 13,
-    nombre: 'Proyecto 13',
-    estado: 'En progreso',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto13'
-  },
-  {
-    id: 14,
-    nombre: 'Proyecto 14',
+    id: 9,
+    nombre: 'Proyecto 9',
     estado: 'Completado',
     imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto14'
+    direccion: 'https://ejemplo.com/proyecto9'
   },
   {
-    id: 15,
-    nombre: 'Proyecto 15',
-    estado: 'En progreso',
+    id: 9,
+    nombre: 'Proyecto 9',
+    estado: 'Completado',
     imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto15'
+    direccion: 'https://ejemplo.com/proyecto9'
   },
   {
-    id: 16,
-    nombre: 'Proyecto 16',
-    estado: 'Terminado',
+    id: 9,
+    nombre: 'Proyecto 9',
+    estado: 'Completado',
     imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto16'
+    direccion: 'https://ejemplo.com/proyecto9'
   },
   {
-    id: 17,
-    nombre: 'Proyecto 17',
-    estado: 'Sin edificar',
+    id: 9,
+    nombre: 'Proyecto 9',
+    estado: 'Completado',
     imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto17'
+    direccion: 'https://ejemplo.com/proyecto9'
+  },
+  {
+    id: 9,
+    nombre: 'Proyecto 9',
+    estado: 'Completado',
+    imagen: 'https://via.placeholder.com/150',
+    direccion: 'https://ejemplo.com/proyecto9'
+  },
+  {
+    id: 9,
+    nombre: 'Proyecto 9',
+    estado: 'Completado',
+    imagen: 'https://via.placeholder.com/150',
+    direccion: 'https://ejemplo.com/proyecto9'
+  },
+  {
+    id: 9,
+    nombre: 'Proyecto 9',
+    estado: 'Completado',
+    imagen: 'https://via.placeholder.com/150',
+    direccion: 'https://ejemplo.com/proyecto9'
+  },
+  {
+    id: 9,
+    nombre: 'Proyecto 9',
+    estado: 'Completado',
+    imagen: 'https://via.placeholder.com/150',
+    direccion: 'https://ejemplo.com/proyecto9'
+  },
+  {
+    id: 9,
+    nombre: 'Proyecto 9',
+    estado: 'Completado',
+    imagen: 'https://via.placeholder.com/150',
+    direccion: 'https://ejemplo.com/proyecto9'
+  },
+  {
+    id: 9,
+    nombre: 'Proyecto 9',
+    estado: 'Completado',
+    imagen: 'https://via.placeholder.com/150',
+    direccion: 'https://ejemplo.com/proyecto9'
+  },
+  {
+    id: 9,
+    nombre: 'Proyecto 9',
+    estado: 'Completado',
+    imagen: 'https://via.placeholder.com/150',
+    direccion: 'https://ejemplo.com/proyecto9'
+  },
+  {
+    id: 9,
+    nombre: 'Proyecto 9',
+    estado: 'Completado',
+    imagen: 'https://via.placeholder.com/150',
+    direccion: 'https://ejemplo.com/proyecto9'
+  },
+  {
+    id: 9,
+    nombre: 'Proyecto 9',
+    estado: 'Completado',
+    imagen: 'https://via.placeholder.com/150',
+    direccion: 'https://ejemplo.com/proyecto9'
   }
   // Agrega más proyectos según sea necesario
 ];

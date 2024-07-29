@@ -16,13 +16,6 @@
   align-items: center;
   justify-content: center;
 }
-
-
-/* Estilos para el selector de filtro */
-.filtro-section {
-  margin-bottom: 40px;
-}
-
 /* Estilos para la barra de búsqueda */
 .busqueda-section {
   margin-bottom: 40px;
