@@ -51,7 +51,7 @@ const Nav = () => {
         </Link>
       </div>
       <div className="menu-item">
-        <Link to="/SociosPage" className="menu-link">
+        <Link to="/Socios" className="menu-link">
           <div className="icon"><img src={Group} alt="Socios" /></div>
           <div className="menu-text">Socios</div>
         </Link>

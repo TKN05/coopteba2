@@ -74,11 +74,12 @@ function UploadPage() {
       </select>
       <div className="file-list">
         {filterFiles().map((file, index) => (
-          <div key={index} className="file-item">
+          <div key={index} className="file-item"> 
+           <a href={file.id} download={file.name} className="download-link">
             <FontAwesomeIcon icon={getIcon(file.type)} size="3x" />
             <p>{file.name}</p>
-            <a href={file.id} download={file.name} className="download-link">
-              Descargar
+          
+             
             </a>
           </div>
         ))}
