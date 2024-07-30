@@ -50,36 +50,37 @@ function UploadPage() {
   return (
     <div className="upload-page">
       <h1>Sube Documentos</h1>
-      <input 
-        type="file" 
-        accept="image/*,application/pdf" 
-        onChange={handleFileChange} 
-        multiple
-      />
-      <input
-        type="text"
-        placeholder="Buscar documentos..."
-        value={searchTerm}
-        onChange={handleSearchChange}
-        className="search-input"
-      />
-      <select
-        value={selectedCategory}
-        onChange={handleCategoryChange}
-        className="category-select"
-      >
-        <option value="all">Todos</option>
-        <option value="images">Imágenes</option>
-        <option value="pdfs">PDFs</option>
-      </select>
+      <div className="upload-actions">
+        <input 
+          type="file" 
+          accept="image/*,application/pdf" 
+          onChange={handleFileChange} 
+          multiple
+        />
+        <input
+          type="text"
+          placeholder="Buscar documentos..."
+          value={searchTerm}
+          onChange={handleSearchChange}
+          className="search-input"
+        />
+        <select
+          value={selectedCategory}
+          onChange={handleCategoryChange}
+          className="category-select"
+        >
+          <option value="all">Todos</option>
+          <option value="images">Imágenes</option>
+          <option value="pdfs">PDFs</option>
+        </select>
+      </div>
       <div className="file-list">
         {filterFiles().map((file, index) => (
-          <div key={index} className="file-item"> 
-           <a href={file.id} download={file.name} className="download-link">
+          <div key={index} className="file-item">
             <FontAwesomeIcon icon={getIcon(file.type)} size="3x" />
             <p>{file.name}</p>
-          
-             
+            <a href={file.id} download={file.name} className="download-link">
+              Descargar
             </a>
           </div>
         ))}

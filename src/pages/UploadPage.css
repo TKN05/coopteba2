@@ -1,9 +1,15 @@
 .upload-page {
     text-align: center;
-    margin: 20px;
-    background-color: #f0f8ff; /* Color de fondo celeste claro */
-    padding: 20px;
-    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 90%;
+  }
+  
+  .upload-actions {
+    margin-bottom: 20px;
+  }
+  
+  .upload-actions input[type="file"] {
+    margin-bottom: 10px;
   }
   
   .search-input, .category-select {
@@ -20,6 +26,14 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
+    background-color: #f0f8ff; /* Color de fondo celeste claro */
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #b0e0e6; /* Color de borde celeste claro */
+    max-height: 500px; /* Ajusta la altura máxima según tus necesidades */
+    overflow-y: auto; /* Añade scroll vertical si es necesario */
+    overflow-x: hidden;
+    margin-bottom: 50px;
   }
   
   .file-item {
@@ -34,13 +48,6 @@
   .file-item p {
     margin: 10px 0;
     color: #333; /* Color del texto */
-  }
-  
-  .file-preview {
-    max-width: 100px;
-    max-height: 100px;
-    object-fit: cover;
-    margin-top: 5px;
   }
   
   .download-link {
