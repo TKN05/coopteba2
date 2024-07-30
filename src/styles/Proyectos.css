@@ -224,7 +224,12 @@
 
 /* Responsive Proyectos */
 
-@media (max-width: 1200px) {
+@media (max-width: 1428px) {
+  .proyectos-container {
+    grid-template-columns: repeat(6, 1fr);
+    /* Reduce a 5 columnas en pantallas medianas */
+  }
+}@media (max-width: 1200px) {
   .proyectos-container {
     grid-template-columns: repeat(5, 1fr);
     /* Reduce a 5 columnas en pantallas medianas */
