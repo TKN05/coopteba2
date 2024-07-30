@@ -5,6 +5,8 @@ import './UploadPage.css';
 
 function UploadPage() {
   const [files, setFiles] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('all');
 
   const handleFileChange = (event) => {
     const uploadedFiles = Array.from(event.target.files);
@@ -17,6 +19,14 @@ function UploadPage() {
     setFiles(prevFiles => [...prevFiles, ...newFiles]);
   };
 
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleCategoryChange = (event) => {
+    setSelectedCategory(event.target.value);
+  };
+
   const getIcon = (fileType) => {
     if (fileType.startsWith('image')) {
       return faFileImage;
@@ -25,6 +35,16 @@ function UploadPage() {
     } else {
       return faFile;
     }
+  };
+
+  const filterFiles = () => {
+    return files.filter(file => {
+      const matchesSearchTerm = file.name.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesCategory = selectedCategory === 'all' ||
+        (selectedCategory === 'images' && file.type.startsWith('image')) ||
+        (selectedCategory === 'pdfs' && file.type === 'application/pdf');
+      return matchesSearchTerm && matchesCategory;
+    });
   };
 
   return (
@@ -36,14 +56,27 @@ function UploadPage() {
         onChange={handleFileChange} 
         multiple
       />
+      <input
+        type="text"
+        placeholder="Buscar documentos..."
+        value={searchTerm}
+        onChange={handleSearchChange}
+        className="search-input"
+      />
+      <select
+        value={selectedCategory}
+        onChange={handleCategoryChange}
+        className="category-select"
+      >
+        <option value="all">Todos</option>
+        <option value="images">Imágenes</option>
+        <option value="pdfs">PDFs</option>
+      </select>
       <div className="file-list">
-        {files.map((file, index) => (
+        {filterFiles().map((file, index) => (
           <div key={index} className="file-item">
             <FontAwesomeIcon icon={getIcon(file.type)} size="3x" />
             <p>{file.name}</p>
-            {file.type.startsWith('image') && (
-              <img src={file.id} alt={file.name} className="file-preview" />
-            )}
             <a href={file.id} download={file.name} className="download-link">
               Descargar
             </a>
