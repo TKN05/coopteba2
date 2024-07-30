@@ -1,0 +1,46 @@
+.upload-page {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .file-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .file-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    max-width: 150px;
+  }
+  
+  .file-preview {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+    margin-top: 5px;
+  }
+  
+  .download-link {
+    display: block;
+    margin-top: 5px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .download-link:hover {
+    text-decoration: underline;
+  }
+  
+  .file-item p {
+    margin: 10px 0;
+  }
+  
+  .file-item .fa-file {
+    color: #888;
+  }
+  
