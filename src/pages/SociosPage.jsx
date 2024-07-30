@@ -58,12 +58,15 @@ function SociosPage() {
   return (
     <div className="table-container">
       <h2>Campos de Socio</h2>
+      <section className='busqueda-section'>
       <input 
         type="text"
         placeholder="Buscar socio..."
         value={busqueda}
         onChange={handleBuscar}
       />
+      </section>
+      
       <table className="table">
         <Nav />
         <thead>
