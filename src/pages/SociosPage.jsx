@@ -18,6 +18,14 @@ function SociosPage() {
     { numero: 7, nombre: 'Carlos', apellido: 'Gómez', dni: '67890123', telefono: '678901234', miembrosGrupo: 4 },
     { numero: 8, nombre: 'Lucía', apellido: 'Díaz', dni: '78901234', telefono: '789012345', miembrosGrupo: 1 },
     { numero: 9, nombre: 'Miguel', apellido: 'Fernández', dni: '89012345', telefono: '890123456', miembrosGrupo: 3 },
+    { numero: 10, nombre: 'Sofía', apellido: 'Ramírez', dni: '90123456', telefono: '901234567', miembrosGrupo: 2 },
+    { numero: 3, nombre: 'Pedro', apellido: 'López', dni: '23456789', telefono: '234567890', miembrosGrupo: 4 },
+    { numero: 4, nombre: 'Ana', apellido: 'Martínez', dni: '34567890', telefono: '345678901', miembrosGrupo: 1 },
+    { numero: 5, nombre: 'Luis', apellido: 'Rodríguez', dni: '45678901', telefono: '456789012', miembrosGrupo: 3 },
+    { numero: 6, nombre: 'Elena', apellido: 'Sánchez', dni: '56789012', telefono: '567890123', miembrosGrupo: 2 },
+    { numero: 7, nombre: 'Carlos', apellido: 'Gómez', dni: '67890123', telefono: '678901234', miembrosGrupo: 4 },
+    { numero: 8, nombre: 'Lucía', apellido: 'Díaz', dni: '78901234', telefono: '789012345', miembrosGrupo: 1 },
+    { numero: 9, nombre: 'Miguel', apellido: 'Fernández', dni: '89012345', telefono: '890123456', miembrosGrupo: 3 },
     { numero: 10, nombre: 'Sofía', apellido: 'Ramírez', dni: '90123456', telefono: '901234567', miembrosGrupo: 2 }
 ]);
 
@@ -70,7 +78,7 @@ const handleAgregarSocio = () => {
 return (
   <>
     <Nav />
-    <div className="table-container">
+    <div className="container">
       <h2>Campos de Socio</h2>
       <section className='busqueda-section'>
         <Busqueda placeHolder='Buscar socios...' onSearchChange={handleSearchChange} />
