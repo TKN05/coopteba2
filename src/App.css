@@ -2,6 +2,10 @@
 @import url(../src/styles/global.css);
 @import url(../src/styles/Menu.css);
 @import url(../src/styles/Tabla-socios.css);
+@import url(../src/styles/Estilo-archivos.css);
+@import url(../src/styles/Estilo-archivos.css);
+
+
 
 #root{
   height: 100vh;
