@@ -12,7 +12,7 @@ const customIcon = L.icon({
     popupAnchor: [0, -40] // Punto desde donde se abre el popup del marcador [arriba, centrado]
     });
     
-function MapView ({lat=-25.65099944465083, lng=-68.62191923990408}){
+function MapView ({lat=-25.65099944465083, lng=-68.62191923990408}){ //coordenadas predeterminadas si no se pone ninguna
 
 
     return (

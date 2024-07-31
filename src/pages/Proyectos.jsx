@@ -4,6 +4,7 @@ import '../App.css'; // Asegúrate de tener tu archivo CSS para estilos
 import Nav from '../components/Nav'; // Importamos el componente Nav
 import CardComponent from '../components/CardComponent';
 import plus from '../assets/svg/SVGPRO/plus.svg';
+import Busqueda from '../components/Busqueda';
 
 const proyectosEjemplo = [
   {
@@ -69,98 +70,7 @@ const proyectosEjemplo = [
     imagen: 'https://via.placeholder.com/150',
     direccion: 'https://ejemplo.com/proyecto9'
   },
-  {
-    id: 9,
-    nombre: 'Proyecto 9',
-    estado: 'Completado',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto9'
-  },
-  {
-    id: 9,
-    nombre: 'Proyecto 9',
-    estado: 'Completado',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto9'
-  },
-  {
-    id: 9,
-    nombre: 'Proyecto 9',
-    estado: 'Completado',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto9'
-  },
-  {
-    id: 9,
-    nombre: 'Proyecto 9',
-    estado: 'Completado',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto9'
-  },
-  {
-    id: 9,
-    nombre: 'Proyecto 9',
-    estado: 'Completado',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto9'
-  },
-  {
-    id: 9,
-    nombre: 'Proyecto 9',
-    estado: 'Completado',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto9'
-  },
-  {
-    id: 9,
-    nombre: 'Proyecto 9',
-    estado: 'Completado',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto9'
-  },
-  {
-    id: 9,
-    nombre: 'Proyecto 9',
-    estado: 'Completado',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto9'
-  },
-  {
-    id: 9,
-    nombre: 'Proyecto 9',
-    estado: 'Completado',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto9'
-  },
-  {
-    id: 9,
-    nombre: 'Proyecto 9',
-    estado: 'Completado',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto9'
-  },
-  {
-    id: 9,
-    nombre: 'Proyecto 9',
-    estado: 'Completado',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto9'
-  },
-  {
-    id: 9,
-    nombre: 'Proyecto 9',
-    estado: 'Completado',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto9'
-  },
-  {
-    id: 9,
-    nombre: 'Proyecto 9',
-    estado: 'Completado',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto9'
-  }
-  // Agrega más proyectos según sea necesario
+  
 ];
 
 const Proyectos = () => {
@@ -175,11 +85,6 @@ const Proyectos = () => {
     setFiltro(e.target.value);
   };
 
-  // Función para manejar el cambio en la barra de búsqueda
-  const handleChangeBusqueda = (e) => {
-    setBusqueda(e.target.value);
-  };
-
   // Función para manejar el cambio en los datos del formulario
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -192,6 +97,10 @@ const Proyectos = () => {
   // Función para mostrar/ocultar el formulario
   const toggleForm = () => {
     setShowForm(!showForm);
+  };
+
+  const handleSearchChange = (searchTerm) => {
+    setBusqueda(searchTerm);
   };
 
   // Función para manejar el envío del formulario
@@ -223,9 +132,7 @@ const Proyectos = () => {
       
       <main className="contenedor-proyectos">
         {/* Sección de Búsqueda */}
-        <section className="busqueda-section">
-          <input type="text" value={busqueda} onChange={handleChangeBusqueda} placeholder="Buscar proyectos..." />
-        </section>
+        <Busqueda placeHolder='Buscar proyectos...' onSearchChange={handleSearchChange}></Busqueda>
 
         {/* Sección de Filtro */}
         <section className="filtro-section">

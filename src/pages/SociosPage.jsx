@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../App.css'; // Importa el archivo CSS de estilos si es necesario
 import Nav from '../components/Nav';
+import Busqueda from '../components/Busqueda';
+
 
 function SociosPage() {
   const [busqueda, setBusqueda] = useState('');
@@ -24,9 +26,10 @@ function SociosPage() {
 
   const camposSocio = ['numero', 'nombre', 'apellido', 'dni', 'telefono', 'miembrosGrupo'];
 
-  const handleBuscar = (e) => {
-    setBusqueda(e.target.value);
+  const handleSearchChange = (searchTerm) => {
+    setBusqueda(searchTerm);
   };
+
 
   const filtrarSocios = (socio) => {
     return camposSocio.some((campo) =>
@@ -67,12 +70,8 @@ function SociosPage() {
     <div className="table-container">
       <h2>Campos de Socio</h2>
       <section className='busqueda-section'>
-      <input 
-        type="text"
-        placeholder="Buscar socio..."
-        value={busqueda}
-        onChange={handleBuscar}
-      />
+      <Busqueda placeHolder='Buscar socios...' onSearchChange={handleSearchChange}></Busqueda>
+
       </section>
       
       <table className="table">

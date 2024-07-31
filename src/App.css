@@ -31,7 +31,7 @@
 
 .busqueda-section input[type="text"]:focus {
   outline: none;
-  border-color: #007bff;
+  border-color: #3498DB;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
@@ -110,8 +110,8 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #007bff;;
-  border: 1px solid #007bff;;
+  background-color: #3498DB;;
+  border: 1px solid #3498DB;;
   cursor: pointer;
   transition: background-color 0.3s;
   margin-bottom: 20px; /* Espacio inferior para separar las filas */

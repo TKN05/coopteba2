@@ -17,16 +17,8 @@ import  MapView  from '../components/MapView';
 
 
 // Componente funcional que representa un ícono SVG
-const Icon = ({ icon }) => {
-  return <img src={icon} alt="Icono" />;
-};
 
-function Home() {
-  const navigate = useNavigate();
-
-  const handleRedirect = (path) => {
-    navigate(path);
-  };
+function Menuproyectos() {
   
   return (
     <>
@@ -62,4 +54,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Menuproyectos;
