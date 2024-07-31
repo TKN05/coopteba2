@@ -11,6 +11,7 @@ import Page4 from './pages/Proyectos';
 import Page5 from './pages/Proyectos';
 import Page6 from './pages/Proyectos';
 import UploadPage from './components/UploadPage';
+import Planos from './components/Planos';
 import './App.css'; // Asegúrate de tener tu archivo CSS para estilos
 
 function App() {
@@ -29,7 +30,8 @@ function App() {
           <Route path="/page4" element={<Page4 />} />
           <Route path="/page5" element={<Page5 />} />
           <Route path="/page6" element={<Page6 />} />
-          <Route path="/upload" element={<UploadPage />} /> {/* Nueva ruta */}
+          <Route path="/upload" element={<UploadPage />} />
+          <Route path="/Planos" element={<UploadPage />} />
         </Routes>
       </div>
     </Router>
