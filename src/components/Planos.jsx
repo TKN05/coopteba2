@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import UploadActions from './UploadActions';
 import FileList from './FileList';
 import styles from '../styles/UploadPage.css';
+import Nav from '../components/Nav';
 
 function DownloadPage() {
   const [files, setFiles] = useState([]);
@@ -39,17 +40,16 @@ function DownloadPage() {
   };
 
   return (
-    <div className={styles.downloadPage}>
-      <h1>Descargar Documentos</h1>
-      <UploadActions
-        onFileChange={handleFileChange}
-        searchTerm={searchTerm}
-        onSearchChange={handleSearchChange}
-        selectedCategory={selectedCategory}
-        onCategoryChange={handleCategoryChange}
-      />
-      <FileList files={files} filterFiles={filterFiles} />
-    </div>
+    <><div className={styles.downloadPage}>
+          <h1>Descargar Documentos</h1>
+          <UploadActions
+              onFileChange={handleFileChange}
+              searchTerm={searchTerm}
+              onSearchChange={handleSearchChange}
+              selectedCategory={selectedCategory}
+              onCategoryChange={handleCategoryChange} />
+          <FileList files={files} filterFiles={filterFiles} />
+      </div><Nav /></>
   );
 }
 

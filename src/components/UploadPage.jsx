@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import UploadActions from './UploadActions';
 import FileList from './FileList';
 import styles from '../styles/UploadPage.css';
-
+import Nav from '../components/Nav';
 function UploadPage() {
   const [files, setFiles] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -39,17 +39,17 @@ function UploadPage() {
   };
 
   return (
-    <div className={styles.uploadPage}>
+    
+    <><div className={styles.uploadPage}>
       <h1>Sube Documentos</h1>
       <UploadActions
         onFileChange={handleFileChange}
         searchTerm={searchTerm}
         onSearchChange={handleSearchChange}
         selectedCategory={selectedCategory}
-        onCategoryChange={handleCategoryChange}
-      />
+        onCategoryChange={handleCategoryChange} />
       <FileList files={files} filterFiles={filterFiles} />
-    </div>
+    </div><Nav /></>
   );
 }
 
