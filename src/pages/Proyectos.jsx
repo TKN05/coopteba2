@@ -1,76 +1,17 @@
-// src/pages/Proyectos.js
+// src/pages/Proyectos.jsx
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../App.css'; // Asegúrate de tener tu archivo CSS para estilos
 import Nav from '../components/Nav'; // Importamos el componente Nav
-import CardComponent from '../components/CardComponent';
 import plus from '../assets/svg/SVGPRO/plus.svg';
 import Busqueda from '../components/Busqueda';
 
+// Datos de ejemplo
 const proyectosEjemplo = [
-  {
-    id: 1,
-    nombre: 'Proyecto 1',
-    estado: 'En progreso',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto1'
-  },
-  {
-    id: 2,
-    nombre: 'Proyecto 2',
-    estado: 'Completado',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto2'
-  },
-  {
-    id: 3,
-    nombre: 'Proyecto 3',
-    estado: 'En progreso',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto3'
-  },
-  {
-    id: 4,
-    nombre: 'Proyecto 4',
-    estado: 'Terminado',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto4'
-  },
-  {
-    id: 5,
-    nombre: 'Proyecto 5',
-    estado: 'Sin edificar',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto5'
-  },
-  {
-    id: 6,
-    nombre: 'Proyecto 6',
-    estado: 'En progreso',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto6'
-  },
-  {
-    id: 7,
-    nombre: 'Proyecto 7',
-    estado: 'Terminado',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto7'
-  },
-  {
-    id: 8,
-    nombre: 'Proyecto 8',
-    estado: 'En progreso',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto8'
-  },
-  {
-    id: 9,
-    nombre: 'Proyecto 9',
-    estado: 'Completado',
-    imagen: 'https://via.placeholder.com/150',
-    direccion: 'https://ejemplo.com/proyecto9'
-  },
-  
+  { id: 1, nombre: 'Proyecto 1', estado: 'En progreso', imagen: 'https://via.placeholder.com/150', direccion: 'http://localhost:3000/Menuproyectos' },
+  { id: 2, nombre: 'Proyecto 2', estado: 'Completado', imagen: 'https://via.placeholder.com/150', direccion: 'http://localhost:3000/Menuproyectos' },
+  { id: 3, nombre: 'Proyecto 3', estado: 'En progreso', imagen: 'https://via.placeholder.com/150', direccion: 'http://localhost:3000/Menuproyectos' },
+  // Añade más proyectos aquí
 ];
 
 const Proyectos = () => {
@@ -79,6 +20,7 @@ const Proyectos = () => {
   const [showForm, setShowForm] = useState(false); // Estado para mostrar/ocultar formulario
   const [formData, setFormData] = useState({ nombre: '', localidad: '', estado: 'En progreso' }); // Estado para los datos del formulario
   const [showConfirmation, setShowConfirmation] = useState(false); // Estado para mostrar el mensaje de confirmación
+  const navigate = useNavigate(); // Hook para navegación
 
   // Función para manejar el cambio en el filtro
   const handleChangeFiltro = (e) => {
@@ -99,6 +41,7 @@ const Proyectos = () => {
     setShowForm(!showForm);
   };
 
+  // Función para manejar la búsqueda
   const handleSearchChange = (searchTerm) => {
     setBusqueda(searchTerm);
   };
@@ -123,16 +66,21 @@ const Proyectos = () => {
     return proyecto.nombre.toLowerCase().includes(busqueda.toLowerCase());
   });
 
+  // Función para manejar el clic en un proyecto
+  const handleProyectoClick = (id) => {
+    navigate(`/proyecto/${id}`);
+  };
+
   return (
     <main className="container">
       {/* Componente Nav */}
       <header>
         <Nav />
       </header>
-      
+
       <main className="contenedor-proyectos">
         {/* Sección de Búsqueda */}
-        <Busqueda placeHolder='Buscar proyectos...' onSearchChange={handleSearchChange}></Busqueda>
+        <Busqueda placeHolder='Buscar proyectos...' onSearchChange={handleSearchChange} />
 
         {/* Sección de Filtro */}
         <section className="filtro-section">
@@ -200,13 +148,15 @@ const Proyectos = () => {
               </div>
             )}
             {proyectosFiltrados.map(proyecto => (
-              <CardComponent
+              <div
                 key={proyecto.id}
-                title={proyecto.nombre}
-                description={proyecto.estado}
-                imageUrl={proyecto.imagen}
-                direccion={proyecto.direccion}
-              />
+                className="card"
+                onClick={() => handleProyectoClick(proyecto.id)}
+              >
+                <img src={proyecto.imagen} alt={proyecto.nombre} />
+                <h2>{proyecto.nombre}</h2>
+                <p>{proyecto.estado}</p>
+              </div>
             ))}
           </div>
         </section>

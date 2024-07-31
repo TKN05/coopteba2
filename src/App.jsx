@@ -10,7 +10,7 @@ import Page3 from './pages/Proyectos';
 import Page4 from './pages/Proyectos';
 import Page5 from './pages/Proyectos';
 import Page6 from './pages/Proyectos';
-import UploadPage from './pages/UploadPage'; // Importa tu nuevo componente
+import UploadPage from './components/UploadPage';
 import './App.css'; // Asegúrate de tener tu archivo CSS para estilos
 
 function App() {
