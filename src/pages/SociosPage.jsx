@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import '../App.css'; // Importa el archivo CSS de estilos si es necesario
 import Nav from '../components/Nav';
 import Busqueda from '../components/Busqueda';
+import TablaSocios from '../components/TablaSocios';
+
 
 
 function SociosPage() {
@@ -19,114 +21,95 @@ function SociosPage() {
     { numero: 10, nombre: 'Sofía', apellido: 'Ramírez', dni: '90123456', telefono: '901234567', miembrosGrupo: 2 }
 ]);
 
-  const [nuevoSocio, setNuevoSocio] = useState({ numero: '', nombre: '', apellido: '', dni: '', telefono: '', miembrosGrupo: '' });
-  const [mostrarFormulario, setMostrarFormulario] = useState(false);
-  const [socioSeleccionado, setSocioSeleccionado] = useState(null);
-  const [mostrarOpciones, setMostrarOpciones] = useState(false);
+const [nuevoSocio, setNuevoSocio] = useState({ numero: '', nombre: '', apellido: '', dni: '', telefono: '', miembrosGrupo: '' });
+const [mostrarFormulario, setMostrarFormulario] = useState(false);
+const [socioSeleccionado, setSocioSeleccionado] = useState(null);
+const [mostrarOpciones, setMostrarOpciones] = useState(false);
 
-  const camposSocio = ['numero', 'nombre', 'apellido', 'dni', 'telefono', 'miembrosGrupo'];
+const camposSocio = ['numero', 'nombre', 'apellido', 'dni', 'telefono', 'miembrosGrupo'];
 
-  const handleSearchChange = (searchTerm) => {
-    setBusqueda(searchTerm);
-  };
+const handleSearchChange = (searchTerm) => {
+  setBusqueda(searchTerm);
+};
 
+const filtrarSocios = (socio) => {
+  return Object.values(socio).some((valor) =>
+    valor.toString().toLowerCase().includes(busqueda.toLowerCase())
+  );
+};
 
-  const filtrarSocios = (socio) => {
-    return camposSocio.some((campo) =>
-      socio[campo].toString().toLowerCase().includes(busqueda.toLowerCase())
-    );
-  };
+const sociosFiltrados = socios.filter(filtrarSocios);
 
-  const sociosFiltrados = socios.filter(filtrarSocios);
+const handleSeleccionarSocio = (socio) => {
+  setSocioSeleccionado(socio);
+  setMostrarOpciones(true);
+};
 
-  const handleSeleccionarSocio = (socio) => {
-    setSocioSeleccionado(socio);
-    setMostrarOpciones(true);
-  };
+const handleModificar = () => {
+  if (socioSeleccionado) {
+    console.log('Modificar', socioSeleccionado);
+    // Aquí puedes agregar la lógica para modificar el socio
+  }
+  setMostrarOpciones(false);
+};
 
-  const handleModificar = () => {
-    if (socioSeleccionado) {
-      console.log('Modificar', socioSeleccionado);
-      // Aquí puedes agregar la lógica para modificar el socio
-    }
-    setMostrarOpciones(false);
-  };
+const handleEliminar = () => {
+  if (socioSeleccionado) {
+    setSocios(socios.filter(s => s.numero !== socioSeleccionado.numero));
+    console.log('Eliminar', socioSeleccionado);
+  }
+  setMostrarOpciones(false);
+};
 
-  const handleEliminar = () => {
-    if (socioSeleccionado) {
-      setSocios(socios.filter(s => s !== socioSeleccionado));
-      console.log('Eliminar', socioSeleccionado);
-    }
-    setMostrarOpciones(false);
-  };
+const handleAgregarSocio = () => {
+  setSocios([...socios, { ...nuevoSocio, numero: socios.length + 1 }]);
+  setNuevoSocio({ numero: '', nombre: '', apellido: '', dni: '', telefono: '', miembrosGrupo: '' });
+  setMostrarFormulario(false);
+};
 
-  const handleAgregarSocio = () => {
-    setSocios([...socios, { ...nuevoSocio, numero: socios.length + 1 }]);
-    setNuevoSocio({ numero: '', nombre: '', apellido: '', dni: '', telefono: '', miembrosGrupo: '' });
-    setMostrarFormulario(false);
-  };
-
-  return (
+return (
+  <>
+    <Nav />
     <div className="table-container">
       <h2>Campos de Socio</h2>
       <section className='busqueda-section'>
-      <Busqueda placeHolder='Buscar socios...' onSearchChange={handleSearchChange}></Busqueda>
-
+        <Busqueda placeHolder='Buscar socios...' onSearchChange={handleSearchChange} />
       </section>
       
-      <table className="table">
-        <Nav />
-        <thead>
-          <tr>
-            {camposSocio.map((campo, index) => (
-              <th key={index}>{campo.toUpperCase()}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {sociosFiltrados.map((socio, index) => (
-            <tr key={index} onClick={() => handleSeleccionarSocio(socio)}>
-              {camposSocio.map((campo) => (
-                <td key={campo}>{socio[campo]}</td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <TablaSocios socios={sociosFiltrados} onModificar={handleSeleccionarSocio} onEliminar={handleEliminar} />
 
-     
       <div>
-      <button onClick={() => setMostrarFormulario(true)}>Agregar Socio</button>
+        <button onClick={() => setMostrarFormulario(true)}>Agregar Socio</button>
 
-{mostrarFormulario && (
-  <div className="proyecto-form">
-    <h3>Agregar Nuevo Socio</h3>
-    {camposSocio.map((campo) => (
-      <div key={campo}>
-        <label>{campo.toUpperCase()}:</label>
-        <input 
-          type="text" 
-          value={nuevoSocio[campo]} 
-          onChange={(e) => setNuevoSocio({ ...nuevoSocio, [campo]: e.target.value })}
-        />
+        {mostrarFormulario && (
+          <div className="proyecto-form">
+            <h3>Agregar Nuevo Socio</h3>
+            {camposSocio.map((campo) => (
+              <div key={campo}>
+                <label>{campo.toUpperCase()}:</label>
+                <input 
+                  type="text" 
+                  value={nuevoSocio[campo]} 
+                  onChange={(e) => setNuevoSocio({ ...nuevoSocio, [campo]: e.target.value })}
+                />
+              </div>
+            ))}
+            <button onClick={handleAgregarSocio}>Guardar</button>
+            <button onClick={() => setMostrarFormulario(false)}>Cancelar</button>
+          </div>
+        )}
+
+        {mostrarOpciones && socioSeleccionado && (
+          <div className="opciones-container">
+            <h3>Opciones para {socioSeleccionado.nombre} {socioSeleccionado.apellido}</h3>
+            <button onClick={handleModificar}>Modificar</button>
+            <button onClick={handleEliminar}>Eliminar</button>
+          </div>
+        )}
       </div>
-    ))}
-    <button onClick={handleAgregarSocio}>Guardar</button>
-    <button onClick={() => setMostrarFormulario(false)}>Cancelar</button>
-  </div>
-)}
-
     </div>
-
-      {mostrarOpciones && (
-        <div className="opciones-container">
-          <h3>Opciones para {socioSeleccionado.nombre} {socioSeleccionado.apellido}</h3>
-          <button onClick={handleModificar}>Modificar</button>
-          <button onClick={handleEliminar}>Eliminar</button>
-        </div>
-      )}
-    </div>
-  );
+  </>
+);
 }
 
 export default SociosPage;

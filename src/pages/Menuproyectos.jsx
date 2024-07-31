@@ -1,6 +1,5 @@
 // src/pages/Home.js
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import '../App.css'; // Importa el archivo CSS de estilos si es necesario
 import Nav from '../components/Nav';
 // Importa los SVGs necesarios
