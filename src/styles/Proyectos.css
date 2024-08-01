@@ -214,6 +214,18 @@
 .proyecto-form button:hover {
   background-color: #2980B9;
 }
+.proyecto-form .close-btn{
+  background-color: #FF6347 ;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.proyecto-form .close-btn:hover{
+  background-color: #d1513b;
+}
 
 .confirmation {
   position: fixed;

@@ -39,6 +39,7 @@ const Proyectos = () => {
   // Función para mostrar/ocultar el formulario
   const toggleForm = () => {
     setShowForm(!showForm);
+    setFormData({ nombre: '', localidad: '', estado: 'En progreso' });
   };
 
   // Función para manejar la búsqueda
@@ -138,7 +139,8 @@ const Proyectos = () => {
                       <option value="Sin edificar">Sin edificar</option>
                     </select>
                   </div>
-                  <button type="button" onClick={handleEnviar}>Enviar</button>
+                  <button type="button" onClick={handleEnviar}>+ Enviar</button>
+                  <button type="button" className='close-btn' onClick={toggleForm}>- Cancelar</button>
                 </form>
               </div>
             )}
