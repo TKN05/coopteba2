@@ -139,7 +139,7 @@ const Proyectos = () => {
                       <option value="Sin edificar">Sin edificar</option>
                     </select>
                   </div>
-                  <button type="button" onClick={handleEnviar}>+ Enviar</button>
+                  <button type="button" className='save-btn' onClick={handleEnviar}>+ Enviar</button>
                   <button type="button" className='close-btn' onClick={toggleForm}>- Cancelar</button>
                 </form>
               </div>

@@ -22,8 +22,9 @@
 }
 
 .table th {
-  background-color: #f1f1f1; /* Ajusta el color de fondo según tus necesidades */
+  background-color: #d5f8ff; /* Ajusta el color de fondo según tus necesidades */
 }
+
 .opciones-container{
   position: fixed;
 }
