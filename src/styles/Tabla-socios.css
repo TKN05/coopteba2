@@ -28,3 +28,17 @@
 .opciones-container{
   position: fixed;
 }
+::-webkit-scrollbar{
+  width: 20px;
+}
+::-webkit-scrollbar-track{
+  background-color: #87CEEB;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: white;
+  border-radius: 20px;
+}
+/* ::-webkit-scrollbar-thumb:hover{
+  background-color: rgb(214, 214, 214);;
+} */
