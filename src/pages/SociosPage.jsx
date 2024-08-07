@@ -5,8 +5,6 @@ import Busqueda from '../components/Busqueda';
 import TablaSocios from '../components/TablaSocios';
 import Formulario from '../components/Formulario';
 
-
-
 function SociosPage() {
   const [busqueda, setBusqueda] = useState('');
   const [socios, setSocios] = useState([
@@ -28,6 +26,7 @@ function SociosPage() {
     { numero: 16, nombre: 'Lucía', apellido: 'Díaz', dni: '78901234', telefono: '789012345', miembrosGrupo: 1 },
     { numero: 17, nombre: 'Miguel', apellido: 'Fernández', dni: '89012345', telefono: '890123456', miembrosGrupo: 3 },
     { numero: 18, nombre: 'Sofía', apellido: 'Ramírez', dni: '90123456', telefono: '901234567', miembrosGrupo: 2 }
+
   ]);
 
   const [nuevoSocio, setNuevoSocio] = useState({ numero: '', nombre: '', apellido: '', dni: '', telefono: '', miembrosGrupo: '' });
@@ -43,6 +42,7 @@ function SociosPage() {
     {name:"telefono", label:'Telefono', type:"text"}, 
     {name:"miembrosGrupo", label:'N° de Miembros', type:"text"},  
 ];
+
   const handleSearchChange = (searchTerm) => {
     setBusqueda(searchTerm);
   };
