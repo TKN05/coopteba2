@@ -3,6 +3,7 @@ import '../App.css'; // Importa el archivo CSS de estilos si es necesario
 import Nav from '../components/Nav';
 import Busqueda from '../components/Busqueda';
 import TablaSocios from '../components/TablaSocios';
+import Formulario from '../components/Formulario';
 
 
 
@@ -34,13 +35,23 @@ function SociosPage() {
   const [socioSeleccionado, setSocioSeleccionado] = useState(null);
   const [mostrarOpciones, setMostrarOpciones] = useState(false);
 
-  const camposSocio = ['Numero', 'Nombre', 'Apellido', 'DNI', 'Telefono', 'N° de Miembros'];
-
+  const camposSocio = [
+    {name:"numero", label:'Numero', type:"text"},
+    {name:"nombre", label:'Nombre', type:"text"}, 
+    {name:"apellido", label:'Apellido', type:"text"}, 
+    {name:"dni", label:'DNI', type:"text"}, 
+    {name:"telefono", label:'Telefono', type:"text"}, 
+    {name:"miembrosGrupo", label:'N° de Miembros', type:"text"},  
+];
   const handleSearchChange = (searchTerm) => {
     setBusqueda(searchTerm);
   };
 
+  const toggleForm = () => {
+    setMostrarFormulario(!mostrarFormulario);
+    setNuevoSocio({ numero: '', nombre: '', apellido: '', dni: '', telefono: '', miembrosGrupo: '' });
 
+  }
   const filtrarSocios = (socio) => {
     return Object.values(socio).some((valor) =>
       valor.toString().toLowerCase().includes(busqueda.toLowerCase())
@@ -88,34 +99,16 @@ function SociosPage() {
         <TablaSocios socios={sociosFiltrados} onModificar={handleSeleccionarSocio} onEliminar={handleEliminar} />
 
         <div>
-          <button className='save-btn' onClick={() => setMostrarFormulario(true)}>+ Agregar Socio</button>
+          <button className='save-btn' onClick={toggleForm}>+ Agregar Socio</button>
 
           {mostrarFormulario && (
-            <div className="modal">
-              <form className="proyecto-form">
-                <h3>Agregar Nuevo Socio</h3>
-                {camposSocio.map((campo) => (
-                  <div key={campo}>
-                    <label>{campo}:</label>
-                    <input
-                      type="text"
-                      value={nuevoSocio[campo]}
-                      onChange={(e) => setNuevoSocio({ ...nuevoSocio, [campo]: e.target.value })}
-                    />
-                  </div>
-                ))}
-                <button className='save-btn' onClick={handleAgregarSocio}>+ Guardar</button>
-                <button
-                  className="close-btn"
-                  onClick={() => {
-                    setMostrarFormulario(false);
-                    setNuevoSocio({ numero: '', nombre: '', apellido: '', dni: '', telefono: '', miembrosGrupo: '' });
-                  }}
-                >
-                  - Cancelar
-                </button>
-              </form>
-            </div>
+            <Formulario
+              fields={camposSocio}
+              formData={nuevoSocio}
+              setFormData={setNuevoSocio}
+              onSubmit={handleAgregarSocio}
+              toggleForm={toggleForm}
+            ></Formulario>
           )}
 
           {mostrarOpciones && socioSeleccionado && (

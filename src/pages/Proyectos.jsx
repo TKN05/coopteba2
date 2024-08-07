@@ -5,6 +5,7 @@ import '../App.css'; // Asegúrate de tener tu archivo CSS para estilos
 import Nav from '../components/Nav'; // Importamos el componente Nav
 import plus from '../assets/svg/SVGPRO/plus.svg';
 import Busqueda from '../components/Busqueda';
+import Formulario from '../components/Formulario';
 
 // Datos de ejemplo
 const proyectosEjemplo = [
@@ -22,19 +23,24 @@ const Proyectos = () => {
   const [showConfirmation, setShowConfirmation] = useState(false); // Estado para mostrar el mensaje de confirmación
   const navigate = useNavigate(); // Hook para navegación
 
+const camposProyecto = [
+  {name:"nombre", label:"Nombre", type:"text"},
+  {name:"localidad", label:"Localidad", type:"text"},
+  {name:"estado", label:"Estado", type:"select", options:["En Progreso", "Completado", "Sin Edificar"]},
+];
   // Función para manejar el cambio en el filtro
   const handleChangeFiltro = (e) => {
     setFiltro(e.target.value);
   };
 
   // Función para manejar el cambio en los datos del formulario
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
-  };
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prevFormData) => ({
+  //     ...prevFormData,
+  //     [name]: value,
+  //   }));
+  // };
 
   // Función para mostrar/ocultar el formulario
   const toggleForm = () => {
@@ -48,7 +54,7 @@ const Proyectos = () => {
   };
 
   // Función para manejar el envío del formulario
-  const handleEnviar = () => {
+  const handleSubmit = () => {
     setShowConfirmation(true); // Mostrar el mensaje de confirmación
     setTimeout(() => {
       setShowConfirmation(false); // Ocultar el mensaje después de 2 segundos
@@ -101,48 +107,55 @@ const Proyectos = () => {
               <h2>Agregar Proyecto</h2>
             </div>
             {showForm && (
-              <div className="modal">
-                <form className="proyecto-form">
-                  <div>
-                    <label htmlFor="nombre">Nombre del Proyecto:</label>
-                    <input
-                      type="text"
-                      id="nombre"
-                      name="nombre"
-                      value={formData.nombre}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="localidad">Localidad:</label>
-                    <input
-                      type="text"
-                      id="localidad"
-                      name="localidad"
-                      value={formData.localidad}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="estado">Estado del Proyecto:</label>
-                    <select
-                      id="estado"
-                      name="estado"
-                      value={formData.estado}
-                      onChange={handleChange}
-                      required
-                    >
-                      <option value="En progreso">En progreso</option>
-                      <option value="Terminado">Terminado</option>
-                      <option value="Sin edificar">Sin edificar</option>
-                    </select>
-                  </div>
-                  <button type="button" className='save-btn' onClick={handleEnviar}>+ Enviar</button>
-                  <button type="button" className='close-btn' onClick={toggleForm}>- Cancelar</button>
-                </form>
-              </div>
+              // <div className="modal">
+              //   <form className="proyecto-form">
+              //     <div>
+              //       <label htmlFor="nombre">Nombre del Proyecto:</label>
+              //       <input
+              //         type="text"
+              //         id="nombre"
+              //         name="nombre"
+              //         value={formData.nombre}
+              //         onChange={handleChange}
+              //         required
+              //       />
+              //     </div>
+              //     <div>
+              //       <label htmlFor="localidad">Localidad:</label>
+              //       <input
+              //         type="text"
+              //         id="localidad"
+              //         name="localidad"
+              //         value={formData.localidad}
+              //         onChange={handleChange}
+              //         required
+              //       />
+              //     </div>
+              //     <div>
+              //       <label htmlFor="estado">Estado del Proyecto:</label>
+              //       <select
+              //         id="estado"
+              //         name="estado"
+              //         value={formData.estado}
+              //         onChange={handleChange}
+              //         required
+              //       >
+              //         <option value="En progreso">En progreso</option>
+              //         <option value="Terminado">Terminado</option>
+              //         <option value="Sin edificar">Sin edificar</option>
+              //       </select>
+              //     </div>
+              //     <button type="button" className='save-btn' onClick={handleEnviar}>+ Enviar</button>
+              //     <button type="button" className='close-btn' onClick={toggleForm}>- Cancelar</button>
+              //   </form>
+              // </div>
+              <Formulario
+                fields={camposProyecto}
+                formData={formData}
+                setFormData={setFormData}
+                onSubmit={handleSubmit}
+                toggleForm={toggleForm}
+              ></Formulario>
             )}
             {showConfirmation && (
               <div className="confirmation">
