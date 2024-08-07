@@ -1,10 +1,7 @@
-// src/pages/Proyectos.jsx
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import '../App.css'; // Asegúrate de tener tu archivo CSS para estilos
 import Nav from '../components/Nav'; // Importamos el componente Nav
-import plus from '../assets/svg/SVGPRO/plus.svg';
-import Busqueda from '../components/Busqueda';
+import FiltroProy from '../components/FiltroProy';
 
 // Datos de ejemplo
 const proyectosEjemplo = [
@@ -15,17 +12,9 @@ const proyectosEjemplo = [
 ];
 
 const Proyectos = () => {
-  const [filtro, setFiltro] = useState('todos'); // Estado para el filtro
-  const [busqueda, setBusqueda] = useState(''); // Estado para la búsqueda
   const [showForm, setShowForm] = useState(false); // Estado para mostrar/ocultar formulario
   const [formData, setFormData] = useState({ nombre: '', localidad: '', estado: 'En progreso' }); // Estado para los datos del formulario
   const [showConfirmation, setShowConfirmation] = useState(false); // Estado para mostrar el mensaje de confirmación
-  const navigate = useNavigate(); // Hook para navegación
-
-  // Función para manejar el cambio en el filtro
-  const handleChangeFiltro = (e) => {
-    setFiltro(e.target.value);
-  };
 
   // Función para manejar el cambio en los datos del formulario
   const handleChange = (e) => {
@@ -42,11 +31,6 @@ const Proyectos = () => {
     setFormData({ nombre: '', localidad: '', estado: 'En progreso' });
   };
 
-  // Función para manejar la búsqueda
-  const handleSearchChange = (searchTerm) => {
-    setBusqueda(searchTerm);
-  };
-
   // Función para manejar el envío del formulario
   const handleEnviar = () => {
     setShowConfirmation(true); // Mostrar el mensaje de confirmación
@@ -57,113 +41,70 @@ const Proyectos = () => {
     }, 2000);
   };
 
-  // Filtrar proyectos según el estado seleccionado y la búsqueda
-  const proyectosFiltrados = proyectosEjemplo.filter(proyecto => {
-    if (filtro === 'todos' || proyecto.estado === filtro) {
-      return true;
-    }
-    return false;
-  }).filter(proyecto => {
-    return proyecto.nombre.toLowerCase().includes(busqueda.toLowerCase());
-  });
-
-  // Función para manejar el clic en un proyecto
-  const handleProyectoClick = (id) => {
-    navigate(`/proyecto/${id}`);
-  };
-
   return (
-    <main className="container">
+    <div className="container">
       {/* Componente Nav */}
       <header>
         <Nav />
       </header>
 
-      <main className="contenedor-proyectos">
-        {/* Sección de Búsqueda */}
-        <Busqueda placeHolder='Buscar proyectos...' onSearchChange={handleSearchChange} />
-
-        {/* Sección de Filtro */}
-        <section className="filtro-section">
-          <select value={filtro} onChange={handleChangeFiltro}>
-            <option value="todos">Todos</option>
-            <option value="En progreso">En progreso</option>
-            <option value="Completado">Completado</option>
-            <option value="Sin edificar">Sin edificar</option>
-          </select>
-        </section>
-
-        {/* Sección de Proyectos */}
+      <div className="contenedor-proyectos">
         <section id="proyectos" className="proyectos-section">
-          <div className="proyectos-container">
-            <div className='card' onClick={toggleForm}>
-              <img src={plus} alt="Agregar Proyecto" />
-              <h2>Agregar Proyecto</h2>
+          <FiltroProy proyectos={proyectosEjemplo} onToggleForm={toggleForm} />
+
+          {showForm && (
+            <div className="modal">
+              <form className="proyecto-form">
+                <div>
+                  <label htmlFor="nombre">Nombre del Proyecto:</label>
+                  <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    value={formData.nombre}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="localidad">Localidad:</label>
+                  <input
+                    type="text"
+                    id="localidad"
+                    name="localidad"
+                    value={formData.localidad}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="estado">Estado del Proyecto:</label>
+                  <select
+                    id="estado"
+                    name="estado"
+                    value={formData.estado}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="En progreso">En progreso</option>
+                    <option value="Terminado">Terminado</option>
+                    <option value="Sin edificar">Sin edificar</option>
+                  </select>
+                </div>
+                <button type="button" className='save-btn' onClick={handleEnviar}>+ Enviar</button>
+                <button type="button" className='close-btn' onClick={toggleForm}>- Cancelar</button>
+              </form>
             </div>
-            {showForm && (
-              <div className="modal">
-                <form className="proyecto-form">
-                  <div>
-                    <label htmlFor="nombre">Nombre del Proyecto:</label>
-                    <input
-                      type="text"
-                      id="nombre"
-                      name="nombre"
-                      value={formData.nombre}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="localidad">Localidad:</label>
-                    <input
-                      type="text"
-                      id="localidad"
-                      name="localidad"
-                      value={formData.localidad}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="estado">Estado del Proyecto:</label>
-                    <select
-                      id="estado"
-                      name="estado"
-                      value={formData.estado}
-                      onChange={handleChange}
-                      required
-                    >
-                      <option value="En progreso">En progreso</option>
-                      <option value="Terminado">Terminado</option>
-                      <option value="Sin edificar">Sin edificar</option>
-                    </select>
-                  </div>
-                  <button type="button" className='save-btn' onClick={handleEnviar}>+ Enviar</button>
-                  <button type="button" className='close-btn' onClick={toggleForm}>- Cancelar</button>
-                </form>
-              </div>
-            )}
-            {showConfirmation && (
-              <div className="confirmation">
-                <p>Proyecto enviado con éxito</p>
-              </div>
-            )}
-            {proyectosFiltrados.map(proyecto => (
-              <div
-                key={proyecto.id}
-                className="card"
-                onClick={() => handleProyectoClick(proyecto.id)}
-              >
-                <img src={proyecto.imagen} alt={proyecto.nombre} />
-                <h2>{proyecto.nombre}</h2>
-                <p>{proyecto.estado}</p>
-              </div>
-            ))}
-          </div>
+          )}
+
+          {showConfirmation && (
+            <div className="confirmation">
+              <p>Proyecto enviado con éxito</p>
+            </div>
+          )}
         </section>
-      </main>
-    </main>
+      </div>
+    </div>
   );
 }
 
