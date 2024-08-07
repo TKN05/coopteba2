@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import UploadActions from './UploadActions';
 import FileList from './FileList';
-import styles from '../styles/UploadPage.css';
+import styles from '../App.css';
 import Nav from '../components/Nav';
 function UploadPage() {
   const [files, setFiles] = useState([]);

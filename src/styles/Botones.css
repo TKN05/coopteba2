@@ -1,0 +1,38 @@
+.close-btn {
+    background-color: #FF6347 ;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 80px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.close-btn:hover{
+    background-color: #d1513b;
+}
+
+.save-btn {
+    background-color: #3498DB;
+    color: white;
+    border-radius: 80px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+.save-btn:hover{
+    background-color: #2980B9;
+}
+
+.modify-btn {
+    background: #81D63F;
+    border: 2px solid #81D63F;
+    border-radius: 80px;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.modify-btn:hover{
+    background-color: #6ab134;
+}

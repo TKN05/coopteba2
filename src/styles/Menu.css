@@ -10,6 +10,7 @@
     justify-content: center;
     align-items: left;
     transition: width 0.3s ease;
+    z-index: 10;
   }
   .menu-container:hover {
     width: 20vw;

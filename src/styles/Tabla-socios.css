@@ -22,71 +22,11 @@ th {
   color: #4682b4; /* Color del texto en los encabezados */
 }
 
-td input {
-  width: 100%;
-  border: 1px solid #b0e0e6;
-  border-radius: 3px;
-  padding: 5px;
+.table th {
+  background-color: #d5f8ff; /* Ajusta el color de fondo según tus necesidades */
 }
 
-td button {
-  background-color: #87cefa; /* Color de fondo celeste claro para los botones */
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-td button:hover {
-  background-color: #00bfff; /* Color celeste más oscuro al pasar el ratón */
-}
-
-.remove-button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.remove-button {
-  background-color: #ff6347; /* Color de fondo rojo para el botón de eliminar */
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.remove-button:hover {
-  background-color: #ff4500; /* Color rojo más oscuro al pasar el ratón */
-}
-
-.confirmation-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 1rem;
-}
-
-.confirmation-container p {
-  margin-bottom: 1rem;
-}
-
-.cancel-button {
-  background-color: #add8e6; /* Color de fondo celeste para el botón de cancelar */
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-.cancel-button:hover {
-  background-color: #87cefa; /* Color celeste más oscuro al pasar el ratón */
-}
-/* Estilos para el modal de formulario */
-.modal-overlay {
+.opciones-container{
   position: fixed;
   top: 0;
   left: 0;
@@ -171,3 +111,17 @@ td button:hover {
   display: flex;
   flex-direction: row;
 }
+::-webkit-scrollbar{
+  width: 20px;
+}
+::-webkit-scrollbar-track{
+  background-color: #87CEEB;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: white;
+  border-radius: 20px;
+}
+/* ::-webkit-scrollbar-thumb:hover{
+  background-color: rgb(214, 214, 214);;
+} */
